@@ -7,11 +7,18 @@
 
 .page-switcher {
     background-color: #f4f4f5;
-    width: 60vw;
     height: 35px;
     border-radius: 25px;
-    margin-top: 70px;
     display: flex;
     align-items: normal;
     justify-content: space-evenly;
+    width: 80vw;
+    margin-top: 40px;
+}
+
+@media (min-width: 720px) {
+    .page-switcher {
+        width: 60vw;
+        margin-top: 70px;
+    }
 }

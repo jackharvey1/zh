@@ -1,0 +1,17 @@
+.page-switcher--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.page-switcher {
+    background-color: #f4f4f5;
+    width: 60vw;
+    height: 35px;
+    border-radius: 25px;
+    margin-top: 70px;
+    display: flex;
+    align-items: normal;
+    justify-content: space-evenly;
+}

@@ -12,6 +12,7 @@
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
+        "babel-preset-react-app": "^10.0.1",
         "prettier": "^3.3.3"
     },
     "scripts": {

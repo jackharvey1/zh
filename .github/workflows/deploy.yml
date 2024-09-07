@@ -12,7 +12,7 @@ jobs:
               with:
                   node-version: 20
             - run: npm install
-            - run: npm run build
+            - run: npm run build --omit=dev
             - uses: actions/upload-artifact@v4
               with:
                   name: output

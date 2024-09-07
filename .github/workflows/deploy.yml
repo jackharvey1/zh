@@ -17,6 +17,7 @@ jobs:
               with:
                   name: output
                   path: build
+                  overwrite: true
     deploy:
         name: Deploy
         needs: build

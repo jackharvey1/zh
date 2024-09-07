@@ -1,4 +1,4 @@
-import './navbar.css';
+import './stylesheet.css';
 import { useState } from 'react';
 
 import ToggleButton from './toggle-button';

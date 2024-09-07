@@ -1,4 +1,4 @@
-import './toggle-button.css';
+import './stylesheet.css';
 
 export default ({ children, enabled, handleOnClick }) => {
     const baseClassName = 'toggle-button';

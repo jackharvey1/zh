@@ -1,4 +1,4 @@
-import './grid.css';
+import './stylesheet.css';
 
 import Tile from './tile';
 

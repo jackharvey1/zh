@@ -1,24 +1,23 @@
-.page-switcher--container {
+.navbar-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
 }
 
-.page-switcher {
+.navbar {
+    width: 100%;
     background-color: #f4f4f5;
     height: 35px;
     border-radius: 25px;
     display: flex;
     align-items: normal;
     justify-content: space-evenly;
-    width: 80vw;
     margin-top: 40px;
 }
 
-@media (min-width: 720px) {
-    .page-switcher {
-        width: 55vw;
-        margin-top: 70px;
+@media (min-width: 1280px) {
+    .navbar {
+        height: 44px;
+        margin-top: 80px;
     }
 }

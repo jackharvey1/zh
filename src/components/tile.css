@@ -1,0 +1,29 @@
+.tile {
+    height: 60px;
+    width: 60px;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 760px) {
+    .tile {
+        height: 72px;
+        width: 72px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .tile {
+        height: 82px;
+        width: 82px;
+    }
+}
+
+.tile--highlighted {
+    border-width: 2px;
+    border-color: #52cbff;
+}

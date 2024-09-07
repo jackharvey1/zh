@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    margin-top: 35px;
+    gap: 8px;
+    grid-template-columns: 62px 62px 62px 62px 62px;
+}
+
+@media (min-width: 760px) {
+    .grid {
+        margin-top: 50px;
+        gap: 22px;
+        grid-template-columns: 74px 74px 74px 74px 74px 74px 74px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid {
+        width: 852px;
+        margin-top: 132px;
+        grid-template-columns: 82px 82px 82px 82px 82px 82px 82px 82px;
+        gap: 28px;
+    }
+}

@@ -1,8 +1,6 @@
 import './stylesheet.css';
 import { useState } from 'react';
 
-import ToggleButton from './toggle-button';
-
 const buttons = ['Learn', 'Test'];
 
 export default () => {
@@ -21,3 +19,17 @@ export default () => {
         </div>
     );
 };
+
+const ToggleButton = ({ children, enabled, handleOnClick }) => {
+    const baseClassName = 'toggle-button';
+    const enabledClassName = 'toggle-button--enabled';
+    const className = enabled
+        ? `${baseClassName} ${enabledClassName}`
+        : baseClassName;
+    return (
+        <div className={className} onClick={handleOnClick}>
+            {children}
+        </div>
+    );
+};
+

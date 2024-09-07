@@ -1,7 +1,7 @@
 .container {
     width: 342px;
-	display: grid;
-  	grid-template-rows: 104px 132px auto;
+    display: grid;
+    grid-template-rows: 75px 64px auto;
 }
 
 .navbar-container {
@@ -41,10 +41,8 @@
     color: white;
 }
 
-
 .grid {
     display: grid;
-    margin-top: 35px;
     gap: 8px;
     grid-template-columns: 62px 62px 62px 62px 62px;
 }
@@ -65,41 +63,68 @@
     border-color: #52cbff;
 }
 
+.audio-image {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+}
+
 @media (min-width: 760px) {
-	.container {
+    .container {
         width: 650px;
+        grid-template-rows: 75px 100px auto;
     }
 
     .grid {
-        margin-top: 50px;
         gap: 22px;
         grid-template-columns: 74px 74px 74px 74px 74px 74px 74px;
     }
 
-	.tile {
+    .tile {
         height: 72px;
         width: 72px;
+    }
+
+    .audio-container {
+        justify-content: flex-start;
     }
 }
 
 @media (min-width: 1280px) {
-	.container {
-		width: 852px;
-	}
+    .container {
+        width: 852px;
+        grid-template-rows: 124px 100px auto;
+    }
 
-	.navbar {
+    .navbar {
         height: 44px;
         margin-top: 80px;
     }
 
     .grid {
         width: 852px;
-        margin-top: 132px;
+        margin-top: 0;
         grid-template-columns: 82px 82px 82px 82px 82px 82px 82px 82px;
         gap: 28px;
     }
 
-	.tile {
+    .tile {
         height: 82px;
         width: 82px;
     }

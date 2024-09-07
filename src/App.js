@@ -1,6 +1,7 @@
 import './App.css';
 import Container from './components/container';
 import Navbar from './components/navbar';
+import Audio from './components/audio';
 import Grid from './components/grid';
 
 const zhuyin = [
@@ -48,6 +49,7 @@ function App() {
         <div className="App">
             <Container>
                 <Navbar />
+                <Audio />
                 <Grid content={zhuyin} />
             </Container>
         </div>

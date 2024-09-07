@@ -32,4 +32,3 @@ const ToggleButton = ({ children, enabled, handleOnClick }) => {
         </div>
     );
 };
-

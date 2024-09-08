@@ -1,4 +1,7 @@
 import './App.css';
+
+import { useState } from 'react';
+
 import Container from './components/container';
 import Navbar from './components/navbar';
 import Audio from './components/audio';
@@ -44,13 +47,22 @@ const zhuyin = [
     'ㄦ',
 ];
 
+const pages = [
+    <>
+        <Audio />
+        <Grid content={zhuyin} />
+    </>,
+    <Grid content={zhuyin} />,
+];
+
 function App() {
+    const [position, setPosition] = useState(0);
+
     return (
         <div className="App">
             <Container>
-                <Navbar />
-                <Audio />
-                <Grid content={zhuyin} />
+                <Navbar position={position} setPosition={setPosition} />
+                {pages[position]}
             </Container>
         </div>
     );

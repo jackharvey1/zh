@@ -61,6 +61,19 @@
 .tile--highlighted {
     border-width: 2px;
     border-color: #52cbff;
+    background-color: #e4f7ff;
+}
+
+.tile--correct {
+    border-width: 2px;
+    border-color: #26ba24;
+    background-color: #def5de;
+}
+
+.tile--incorrect {
+    border-width: 2px;
+    border-color: #fee9e9;
+    background-color: #fa6969;
 }
 
 .audio-image {

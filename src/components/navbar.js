@@ -1,7 +1,7 @@
 import './stylesheet.css';
 import { useState } from 'react';
 
-const buttons = ['Learn', 'Test'];
+const buttons = ['Listen', 'Practise', 'Test'];
 
 export default () => {
     const [position, setPosition] = useState(0);

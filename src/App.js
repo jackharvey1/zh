@@ -1,69 +1,53 @@
 import './App.css';
-
 import { useState } from 'react';
-
-import Container from './components/container';
-import Navbar from './components/navbar';
 import Audio from './components/audio';
-import Grid from './components/grid';
-
-const zhuyin = [
-    'ㄅ',
-    'ㄆ',
-    'ㄇ',
-    'ㄈ',
-    'ㄉ',
-    'ㄊ',
-    'ㄋ',
-    'ㄌ',
-    'ㄍ',
-    'ㄎ',
-    'ㄏ',
-    'ㄐ',
-    'ㄑ',
-    'ㄒ',
-    'ㄓ',
-    'ㄔ',
-    'ㄕ',
-    'ㄖ',
-    'ㄗ',
-    'ㄘ',
-    'ㄙ',
-    'ㄧ',
-    'ㄨ',
-    'ㄩ',
-    'ㄚ',
-    'ㄛ',
-    'ㄜ',
-    'ㄝ',
-    'ㄞ',
-    'ㄟ',
-    'ㄠ',
-    'ㄡ',
-    'ㄢ',
-    'ㄣ',
-    'ㄤ',
-    'ㄥ',
-    'ㄦ',
-];
-
-const pages = [
-    <>
-        <Audio />
-        <Grid content={zhuyin} />
-    </>,
-    <Grid content={zhuyin} />,
-];
+import Tile from './components/tile';
+import Footer from './components/footer';
+import zhuyin from './data/zhuyin.json';
 
 function App() {
-    const [position, setPosition] = useState(0);
+    const [selected, setSelected] = useState();
+    const [currentPair, setCurrentPair] = useState(() => {
+        const numberOfItems = Object.keys(zhuyin).length;
+        const itemIndexToGuess = Math.floor(Math.random() * numberOfItems);
+        return Object.entries(zhuyin)[itemIndexToGuess];
+    });
+
+    const generateNewPair = () => {
+        const numberOfItems = Object.keys(zhuyin).length;
+        const itemIndexToGuess = Math.floor(Math.random() * numberOfItems);
+        setCurrentPair(Object.entries(zhuyin)[itemIndexToGuess]);
+        setSelected(undefined);
+    };
+
+    const [answer, audio] = currentPair;
 
     return (
         <div className="App">
-            <Container>
-                <Navbar position={position} setPosition={setPosition} />
-                {pages[position]}
-            </Container>
+            <div className="page">
+                <>
+                    <Audio
+                        pathToAudio={process.env.PUBLIC_URL + 'audio/' + audio}
+                    />
+                    <div className="grid">
+                        {Object.keys(zhuyin).map((item) => (
+                            <Tile
+                                key={item}
+                                character={item}
+                                answer={answer}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
+                        ))}
+                    </div>
+                    <Footer
+                        answer={answer}
+                        selected={selected}
+                        setSelected={setSelected}
+                        footerHandleOnClick={generateNewPair}
+                    />
+                </>
+            </div>
         </div>
     );
 }

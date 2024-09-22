@@ -1,5 +1,11 @@
+:root {
+    --mobile-width: 342px;
+    --tablet-width: 650px;
+    --desktop-width: 852px;
+}
+
 .container {
-    width: 342px;
+    width: var(--mobile-width);
     display: grid;
     grid-template-rows: 75px 64px auto;
 }
@@ -59,21 +65,94 @@
 }
 
 .tile--highlighted {
-    border-width: 2px;
+    border-width: 1px;
     border-color: #52cbff;
     background-color: #e4f7ff;
 }
 
 .tile--correct {
-    border-width: 2px;
+    border-width: 1px;
     border-color: #26ba24;
     background-color: #def5de;
 }
 
 .tile--incorrect {
-    border-width: 2px;
-    border-color: #fee9e9;
-    background-color: #fa6969;
+    border-width: 1px;
+    border-color: #fa6969;
+    background-color: #fee9e9;
+}
+
+.footerContainer {
+    width: var(--mobile-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 760px) {
+        width: var(--tablet-width);
+    }
+
+    @media (min-width: 1280px) {
+        width: var(--desktop-width);
+    }
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
+    height: 155px;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    bottom: 0;
+    left: 0;
+
+    border: 0 solid #cecece;
+    border-top-width: 1px;
+    background-color: white;
+
+    .icon-container {
+        display: flex;
+        background-color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 44px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        width: 102px;
+        border: none;
+        border-radius: 6px;
+        height: 44px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.footer--correct {
+    background: #def5de;
+    color: #26ba24;
+
+    .button {
+        background-color: #26ba24;
+        color: #ffffff;
+    }
+}
+
+.footer--incorrect {
+    background: #fee9e9;
+    color: #fa6969;
+
+    .button {
+        background-color: #fa6969;
+        color: #ffffff;
+    }
 }
 
 .audio-image {
@@ -100,7 +179,7 @@
 
 @media (min-width: 760px) {
     .container {
-        width: 650px;
+        width: var(--tablet-width);
         grid-template-rows: 75px 100px auto;
     }
 
@@ -121,7 +200,7 @@
 
 @media (min-width: 1280px) {
     .container {
-        width: 852px;
+        width: var(--desktop-width);
         grid-template-rows: 124px 100px auto;
     }
 
@@ -131,7 +210,7 @@
     }
 
     .grid {
-        width: 852px;
+        width: var(--desktop-width);
         margin-top: 0;
         grid-template-columns: 82px 82px 82px 82px 82px 82px 82px 82px;
         gap: 28px;

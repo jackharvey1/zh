@@ -1,4 +1,4 @@
-import './stylesheet.css';
+import './audio.css';
 
 export default ({ pathToAudio }) => {
     const audio = new Audio(pathToAudio);

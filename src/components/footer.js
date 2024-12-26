@@ -1,4 +1,4 @@
-import './stylesheet.css';
+import './footer.css';
 
 export default ({ answer, selected, footerHandleOnClick }) => {
     let footerClassName = 'footer';
@@ -35,8 +35,10 @@ export default ({ answer, selected, footerHandleOnClick }) => {
     return (
         <div className={footerClassName}>
             <div className="footerContainer">
-                {icon}
-                {text}
+                <span className="footerIconTextContainer">
+                    {icon}
+                    {text}
+                </span>
                 {selected ? (
                     <button
                         className="button"

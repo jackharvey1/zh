@@ -1,0 +1,29 @@
+.audio-image {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.audio-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+}
+
+@media (min-width: 760px) {
+    .audio-container {
+        justify-content: flex-start;
+        margin: 50px 0;
+    }
+}

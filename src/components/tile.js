@@ -1,4 +1,4 @@
-import './stylesheet.css';
+import './tile.css';
 
 const handleOnClick = (character, selected, setSelected) => {
     if (!selected) {

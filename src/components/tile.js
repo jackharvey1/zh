@@ -6,20 +6,21 @@ const handleOnClick = (character, selected, setSelected) => {
     }
 };
 
-export default ({ character, answer, selected, setSelected }) => {
+export default ({ tileCharacter, inputKey, answer, selected, setSelected }) => {
     let className = 'tile';
-    if (selected === character && character === answer) {
+    if (selected === tileCharacter && tileCharacter === answer) {
         className = `${className} tile--correct`;
-    } else if (selected === character && character !== answer) {
+    } else if (selected === tileCharacter && tileCharacter !== answer) {
         className = `${className} tile--incorrect`;
     }
 
     return (
         <div
             className={className}
-            onClick={() => handleOnClick(character, selected, setSelected)}
+            onClick={() => handleOnClick(tileCharacter, selected, setSelected)}
         >
-            {character}
+            {tileCharacter}
+            <span className="tile-key">{inputKey}</span>
         </div>
     );
 };

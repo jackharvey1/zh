@@ -4,40 +4,51 @@ import Audio from './components/audio';
 import Tile from './components/tile';
 import Footer from './components/footer';
 import zhuyin from './data/zhuyin.json';
+import useShortcut from './lib/useShortcut';
 
 const generateNewPair = () => {
-    const numberOfItems = Object.keys(zhuyin).length;
+    const numberOfItems = zhuyin.length;
     const itemIndexToGuess = Math.floor(Math.random() * numberOfItems);
-    return Object.entries(zhuyin)[itemIndexToGuess];
+    return zhuyin[itemIndexToGuess];
+};
+
+const setupShortcuts = (setSelected, resetState) => {
+    zhuyin.forEach(({ character, key }) => {
+        useShortcut(key, () => setSelected(character));
+    });
 };
 
 function App() {
     const [selected, setSelected] = useState();
-    const [currentPair, setCurrentPair] = useState(generateNewPair());
+    const [answer, setAnswer] = useState(generateNewPair());
 
     const resetState = () => {
-        setCurrentPair(generateNewPair());
+        setAnswer(generateNewPair());
         setSelected(undefined);
     };
 
-    const [answer, audio] = currentPair;
+    setupShortcuts(setSelected, resetState);
+    useShortcut(' ', resetState);
 
     return (
         <div className="App">
-            <Audio pathToAudio={process.env.PUBLIC_URL + 'audio/' + audio} />
+            <Audio
+                pathToAudio={process.env.PUBLIC_URL + 'audio/' + answer.audio}
+            />
             <div className="grid">
-                {Object.keys(zhuyin).map((item) => (
+                {zhuyin.map(({ character, key }) => (
                     <Tile
-                        key={item}
-                        character={item}
-                        answer={answer}
+                        key={character}
+                        tileCharacter={character}
+                        inputKey={key}
+                        answer={answer.character}
                         selected={selected}
                         setSelected={setSelected}
                     />
                 ))}
             </div>
             <Footer
-                answer={answer}
+                answer={answer.character}
                 selected={selected}
                 setSelected={setSelected}
                 footerHandleOnClick={resetState}

@@ -33,7 +33,7 @@ function App() {
     return (
         <div className="App">
             <Audio
-                pathToAudio={process.env.PUBLIC_URL + 'audio/' + answer.audio}
+                pathToAudio={import.meta.env.BASE_URL + 'audio/' + answer.audio}
             />
             <div className="grid">
                 {zhuyin.map(({ character, key }) => (

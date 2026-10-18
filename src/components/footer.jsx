@@ -21,12 +21,12 @@ export default ({ answer, selected, footerHandleOnClick }) => {
             {selected === answer ? (
                 <img
                     alt="tick icon"
-                    src={process.env.PUBLIC_URL + '/img/tick.svg'}
+                    src={import.meta.env.BASE_URL + 'img/tick.svg'}
                 />
             ) : (
                 <img
                     alt="cross icon"
-                    src={process.env.PUBLIC_URL + '/img/cross.svg'}
+                    src={import.meta.env.BASE_URL + 'img/cross.svg'}
                 />
             )}
         </div>

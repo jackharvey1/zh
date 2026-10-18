@@ -13,7 +13,7 @@ export default ({ pathToAudio }) => {
             <span className="audio-image" onClick={play}>
                 <img
                     alt="audio icon"
-                    src={process.env.PUBLIC_URL + '/img/speaker.svg'}
+                    src={import.meta.env.BASE_URL + 'img/speaker.svg'}
                 />
             </span>
         </div>

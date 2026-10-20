@@ -2,7 +2,11 @@ name: CI
 
 on:
     push:
+        # master runs this via the deploy workflow
+        branches-ignore:
+            - master
     pull_request:
+    workflow_call:
 
 jobs:
     test:

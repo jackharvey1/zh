@@ -12,7 +12,7 @@ const generateNewPair = () => {
     return zhuyin[itemIndexToGuess];
 };
 
-const setupShortcuts = (setSelected, resetState) => {
+const setupShortcuts = (setSelected) => {
     zhuyin.forEach(({ character, key }) => {
         useShortcut(key, () => setSelected(character));
     });
@@ -27,7 +27,7 @@ function App() {
         setSelected(undefined);
     };
 
-    setupShortcuts(setSelected, resetState);
+    setupShortcuts(setSelected);
     useShortcut(' ', resetState);
 
     return (
